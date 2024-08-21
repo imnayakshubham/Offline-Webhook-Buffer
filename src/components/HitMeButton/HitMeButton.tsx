@@ -12,7 +12,6 @@ type PayloadType = {
 export const HitMeButton = () => {
     const isOnline = useOnlineStatus();
 
-
     const sendBufferedRequests = useCallback(async (bufferedRequests: PayloadType[]) => {
         const remainingRequests = [];
         for (const request of bufferedRequests) {
@@ -24,7 +23,6 @@ export const HitMeButton = () => {
                 remainingRequests.push(request);
             }
         }
-        console.log({ remainingRequests })
         localStorage.setItem(import.meta.env.VITE_APP_LOCAL_STORAGE_KEY, JSON.stringify(remainingRequests));
     }, [])
 
